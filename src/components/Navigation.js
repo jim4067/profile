@@ -63,21 +63,24 @@ const Navigation = () => {
 
     useEffect(() => {
         const theme = window.localStorage.getItem('theme');
-        if (theme) {
-            setDark(theme);
-        }
-    }, []);
 
+        if(theme === 'true'){
+            setDark(false);
+        } 
+        else {
+            setDark(true);
+        }
+      }, []);
 
     //make sure you useEffect on this so that the theme is not lost when the window is reloaded
     //set the value of dark mode in local storage and useEffect tp set the dark variable
     const handleThemeSwitch = () => {
-        setDark(!dark);
-
         //persisting the users theme
         window.localStorage.setItem(
             'theme', dark
         );
+
+        setDark(!dark);
     }
 
 
