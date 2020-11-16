@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import styled, { createGlobalStyle, keyframes } from 'styled-components';
 
 //the global styles for setting the theme
 const GlobalTheme = createGlobalStyle`
  body {
-     color: ${({ dark }) => dark ? "#eceff4" : "#4c566a"};
      background-color: ${({ dark }) => dark ? "#242933" : "#eceff4"};
+     color: ${({ dark }) => dark ? "#eceff4" : "#4c566a"};
  }
 `
 
@@ -58,31 +58,7 @@ const ThemeSwitcher = styled.button`
     }
 `;
 
-const Navigation = () => {
-    const [dark, setDark] = useState(false);
-
-    useEffect(() => {
-        const theme = window.localStorage.getItem('theme');
-
-        if(theme === 'true'){
-            setDark(false);
-        } 
-        else {
-            setDark(true);
-        }
-      }, []);
-
-    //make sure you useEffect on this so that the theme is not lost when the window is reloaded
-    //set the value of dark mode in local storage and useEffect tp set the dark variable
-    const handleThemeSwitch = () => {
-        //persisting the users theme
-        window.localStorage.setItem(
-            'theme', dark
-        );
-
-        setDark(!dark);
-    }
-
+const Navigation = ({ dark, handleThemeSwitch }) => {
 
     return (
         <Wrapper>
