@@ -1,13 +1,5 @@
 import React from 'react';
-import styled, { createGlobalStyle, keyframes } from 'styled-components';
-
-//the global styles for setting the theme
-const GlobalTheme = createGlobalStyle`
- body {
-     background-color: ${({ dark }) => dark ? "#242933" : "#eceff4"};
-     color: ${({ dark }) => dark ? "#eceff4" : "#4c566a"};
- }
-`
+import styled, { keyframes } from 'styled-components';
 
 //animations should be out here
 const Fadein = keyframes`
@@ -62,8 +54,6 @@ const Navigation = ({ dark, handleThemeSwitch }) => {
 
     return (
         <Wrapper>
-
-            <GlobalTheme dark={dark} />
 
             <Logo>JIM <span style={{ color: '#48dbfb' }} >.</span>  </Logo>
 
