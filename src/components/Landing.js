@@ -6,10 +6,16 @@ const SlideIn = keyframes`
     0%{
         opacity: 0;
     }
+    50%{
+        opacity: .5;
+    }
+    100%{
+        opacity: 1;
+    }
 `;
 
 const Wrapper = styled.div`
-   
+   animation: ${SlideIn} ease-in 1s;
 `;
 
 const Greetings = styled.section`
@@ -76,7 +82,7 @@ const Landing = ({ dark }) => {
             <Greetings>
                 Hi there, I'm Jimmy. <br />
                 An online self-taught <br />
-                <span style={{ color: "#48dbfb" }}>Full stack</span> web developer.
+                <span style={{ color: "#48dbfb" }}>Full stack</span> web developer
             </Greetings>
 
             <ButtonContainer >

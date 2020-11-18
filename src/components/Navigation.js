@@ -20,7 +20,7 @@ const Wrapper = styled.div`
     justify-content: space-between;
     /* margin-top: 8vh; */
     margin: 8vh 0;
-    animation: ${Fadein} ease-in .3s;
+    animation: ${Fadein} ease-in-out .5s;
 `
 
 //the logo styled
