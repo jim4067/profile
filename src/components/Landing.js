@@ -27,13 +27,14 @@ const Greetings = styled.section`
 	@media (max-width: 680px) {
 		line-height: 15vw;
 	}
-	/* @media (max-width: 680px){
-        font-size: 7vw;
-    } */
 `;
 
 const ButtonContainer = styled.section`
     margin: 12vh 0px;
+
+    @media (max-width: 680px) {
+        margin: 6vh 0vh;
+    }
 `;
 
 const Button = styled.button`
@@ -57,21 +58,17 @@ const Button = styled.button`
     }
     
     @media (max-width: 680px){
+        height: 5vh;
         width: 100px;
     }
 `;
 
 const ResumeButton = styled(Button)`
-    /* background-color: ${({ dark }) => dark ? "#eceff4" : "# 242933"}; */
+//apparently these two backtick should not be forgotten unless you want to break everything
 `;
 
 const EmailButton = styled(Button)`
-    /* background-color: ${({ dark }) => dark ? "#242933" : "#eceff4"}; */
     margin-left: 20vw;
-
-    /* @media (max-width: 680px){
-        margin-left: 4vw;
-    } */
 `;
 
 const Landing = ({ dark }) => {
@@ -94,6 +91,4 @@ const Landing = ({ dark }) => {
     );
 }
 
-
 export default Landing;
-//make sure that you have the text appering from below and from sideways
