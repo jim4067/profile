@@ -44,7 +44,7 @@ const Button = styled.button`
     box-shadow: ${({ dark }) => dark ? "0px 5px 5px -5px darkslategrey" : "0px 7px 15px -5px  #00000070"};
     color: ${({ dark }) => dark ? "#eceff4" : "#4c566a"};
     font-size: 2vh;
-    height: 6.5vh;
+    height: 5.5vh;
     outline: none;
 	text-align: center;
 	text-decoration: none;
@@ -63,12 +63,14 @@ const Button = styled.button`
     }
 `;
 
-const ResumeButton = styled(Button)`
-//apparently these two backtick should not be forgotten unless you want to break everything
-`;
+const ResumeButton = styled(Button)``;
 
 const EmailButton = styled(Button)`
-    margin-left: 20vw;
+    margin-left: 37vw;
+
+    @media (max-width: 500px){
+        margin-left: 20vw;
+    }
 `;
 
 const Landing = ({ dark }) => {
@@ -79,7 +81,7 @@ const Landing = ({ dark }) => {
             <Greetings>
                 Hi there, I'm Jimmy. <br />
                 An online self-taught <br />
-                <span style={{ color: "#48dbfb" }}>Full stack</span> web developer
+                <span style={{ color: "#48dbfb" }}>Full stack</span> web developer.
             </Greetings>
 
             <ButtonContainer >
