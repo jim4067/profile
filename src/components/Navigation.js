@@ -9,16 +9,14 @@ const Fadein = keyframes`
     }
     100%{
         opacity: 1;
-        transfosrm: translate(0);
+        transform: translate(0);
     }
 `
-
 
 const Wrapper = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    /* margin-top: 8vh; */
     margin: 8vh 0;
     animation: ${Fadein} ease-in-out .5s;
 `
@@ -26,13 +24,20 @@ const Wrapper = styled.div`
 //the logo styled
 const Logo = styled.h2`
     font-family: Arial, Helvetica, sans-serif;
+    font-size: normal;
+
+    @media(max-width: 2500px){
+        font-size: normal;
+    }
+
+    @media(min-width: 1200px){
+        font-size: 3vw;
+    }
 `;
 
 //theme changing button
 const ThemeSwitcher = styled.button`
-    /* background-color: ${({ dark }) => dark ? "white" : "white"}; */
     background: none;
-    /* border: 1px solid #48dbfb; */
     border: ${({ dark }) => dark ? "1px solid #48dbfb" : "none"};
     border-radius: 4px;
     box-shadow: ${({ dark }) => dark ? "0px 5px 5px -5px darkslategrey" : "0px 7px 15px -5px  #00000070"};
@@ -47,6 +52,13 @@ const ThemeSwitcher = styled.button`
         background-color: #48dbfb;
         cursor: pointer;
         color: black;
+    }
+
+    @media (min-width: 1400px){
+        font-size: 2vh;
+        font-weight: 100;
+        height: 5vh;
+        text-align: center;
     }
 `;
 
@@ -64,12 +76,3 @@ const Navigation = ({ dark, handleThemeSwitch }) => {
 }
 
 export default Navigation;
-
-//when switching between dark and light. make the button rounded and ask dark or light
-
-//MAKE SURE you mark the time for transition when doing animations for components fading in and out
-
-//save the them in the local storage and then useEffect hook to see the value stored in local storage to change
-//the theme
-
-//add a oh snap to make the whole page fade away like in avengers
