@@ -1,27 +1,42 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled, { keyframes } from "styled-components";
+
+//animation 
+const SlideIn = keyframes`
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: .5;
+    }
+    100%{
+        opacity: 1;
+    }
+`;
+
 
 //styles
 const Wrapper = styled.div`
-    color: ${({ dark }) => dark ? "#eceff4" : "#4c566a"};
-    line-height: 30px;
+    animation: ${SlideIn} ease-in 1s;
+	color: ${({ dark }) => (dark ? "#eceff4" : "#4c566a")};
+	line-height: 30px;
 `;
 
 const ParagraphContainer = styled.section`
-    display: flex;
-    flex-wrap: wrap;
+	display: flex;
+	flex-wrap: wrap;
 `;
 
 const Sides = styled.div`
-    width: 600px;
+	width: 600px;
 `;
 const SideOne = styled(Sides)`
-    margin-bottom: 14px;
-    padding-right: 30px;
+	margin-bottom: 14px;
+	padding-right: 30px;
 `;
 
 const SideTwo = styled(Sides)`
-    
+    margin-right: 30px;
 `;
 
 const About = ({ dark }) => {
@@ -36,7 +51,7 @@ const About = ({ dark }) => {
             current_age = new Date().getFullYear() - birth_year;
             return current_age;
         }
-        current_age = (new Date().getFullYear() - birth_year) - 1;
+        current_age = new Date().getFullYear() - birth_year - 1;
         return current_age;
     }
 
@@ -57,19 +72,21 @@ const About = ({ dark }) => {
                         offers. But what does this have to do with the
                         meticulous, intellectual crafted paragraph above about
                         human evolution? Like fire, Javascript if not properly
-                        handled can bring down an entire production server.
+                        handled can bring down the infamous 'production server'. {/*link to junior who brought down a prod server */}
                         That's where I come in.
 					</p>
                 </SideOne>
 
                 <SideTwo className="paragraph-side-2">
                     <p>
-                        I'm Jimmy. An {calculate_age()} year old full stack web
-						developer and Javascript language aficionado who is
-						passionate about how society interacts with technology
-						and how we can effectively use it to impact peoples
-						lives positively. I am currently seeking a position where
-						I can make a difference using my knowledge.
+                        I'm Jimmy. An {calculate_age()} year old astrophysics
+						student at the University of Nairobi. I am self-taught
+						in full stack web development and also a self-declared
+						Javascript language aficionado who is passionate about
+						how society interacts with technology and how we can
+						effectively use it to impact peoples lives positively. I
+						am currently open to a position where I can make a
+						difference using my skills.
 					</p>
                 </SideTwo>
             </ParagraphContainer>
