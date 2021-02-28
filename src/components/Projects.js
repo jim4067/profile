@@ -31,10 +31,10 @@ const SingleProject = styled.div`
     border: ${({ dark }) => dark ? "1px solid #48dbfb" : "none"};
     border-radius: 4px;
     box-shadow: ${({ dark }) => dark ? "0px 5px 5px -5px darkslategrey" : "0px 7px 15px -5px  #00000070"};
-    margin: 1vh 30px 1vh 0vw;
+    margin: 1.5vh 30px 1.5vh 0vw;
     outline: none;
     padding: 4px 20px;
-    width: 43.7vw;
+    width: 42.7vw;
 
     @media (max-width: 1200px) {
         width: 85vw;
