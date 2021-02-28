@@ -20,6 +20,11 @@ const Wrapper = styled.div`
     animation: ${SlideIn} ease-in 1s;
 	color: ${({ dark }) => (dark ? "#eceff4" : "#4c566a")};
 	line-height: 30px;
+
+    @media (min-width: 1500px){
+        font-size: 2vh;
+        line-height: 2;
+    }
 `;
 
 const ParagraphContainer = styled.section`
@@ -28,7 +33,18 @@ const ParagraphContainer = styled.section`
 `;
 
 const Sides = styled.div`
-	width: 600px;
+	/* width: 600px; */
+    width:43vw;
+
+
+    //for styled greater than 2500px
+    @media (min-width: 1400px){
+        width: 45vw;
+    }
+    //for styles less than 1200px
+    @media (max-width: 1200px) {
+        width: 100vw;
+    }
 `;
 const SideOne = styled(Sides)`
 	margin-bottom: 14px;
@@ -37,6 +53,7 @@ const SideOne = styled(Sides)`
 
 const SideTwo = styled(Sides)`
     margin-right: 30px;
+    justify-self: flex-end;
 `;
 
 const About = ({ dark }) => {
@@ -72,7 +89,7 @@ const About = ({ dark }) => {
                         offers. But what does this have to do with the
                         meticulous, intellectual crafted paragraph above about
                         human evolution? Like fire, Javascript if not properly
-                        handled can bring down the infamous 'production server'. {/*link to junior who brought down a prod server */}
+                        handled can bring down the infamous 'production server'. 
                         That's where I come in.
 					</p>
                 </SideOne>
