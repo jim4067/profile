@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { createGlobalStyle } from 'styled-components';
+import About from './components/About';
+import Footer from './components/Footer';
 import Landing from './components/Landing';
 import Navigation from './components/Navigation';
+import Projects from './components/Projects';
+import Skills from './components/Skills';
 import './styles/App.css';
-
 
 //the global styles for setting the theme
 const GlobalTheme = createGlobalStyle`
@@ -11,8 +14,7 @@ const GlobalTheme = createGlobalStyle`
      background-color: ${({ dark }) => dark ? "#242933" : "#eceff4"};
      color: ${({ dark }) => dark ? "#eceff4" : "#4c566a"};
  }
-`
-
+`;
 
 const App = () => {
 	const [dark, setDark] = useState(false);
@@ -49,17 +51,16 @@ const App = () => {
 
 			<Landing dark={dark} />
 
-			<p> This is the text in the app component</p>
+			<About dark={dark} />
+
+			<Skills />
+
+			<Projects dark={dark}/>
+
+			<Footer dark={dark} />
+
 		</div>
 	);
 }
 
 export default App;
-
-
-//hi there, i am jimmy a self taught and introverted full stack web dev
-
-//add section with the certifications from freecodecamp and fullstackopen site
-
-//in the projects sections add a page that shows all the projects built from the fullstackopen
-//challenge
