@@ -6,7 +6,6 @@ const Wrapper = styled.div`
 
 	@media (min-width: 1500px){
         font-size: 2vh;
-        line-height: 2;
     }
 `;
 
@@ -26,7 +25,7 @@ const SkillsRow = styled.div`
 	display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
-	width: 300px;
+	width: 500px;
 `;
 
 const Skill = styled.p`
