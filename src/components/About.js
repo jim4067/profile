@@ -32,6 +32,7 @@ const ParagraphContainer = styled.section`
 	flex-wrap: wrap;
 `;
 
+//use flex for the sides
 const Sides = styled.div`
 	/* width: 600px; */
     width:43vw;
@@ -60,9 +61,9 @@ const About = ({ dark }) => {
     function calculate_age() {
         const birth_year = 2002;
         const birth_month = 6; //June
-        const month_now = new Date().getMonth();
+        const month_now = new Date().getMonth() + 1;
 
-        let current_age;
+        let current_age = 0;
 
         if (month_now > birth_month) {
             current_age = new Date().getFullYear() - birth_year;
@@ -70,6 +71,7 @@ const About = ({ dark }) => {
         }
         current_age = new Date().getFullYear() - birth_year - 1;
         return current_age;
+
     }
 
     return (
@@ -83,28 +85,28 @@ const About = ({ dark }) => {
                         boil bathing water. The last one there might be
                         far-fetched but, it was FIRE! The discovery of the
                         century you might say.
-					</p>
+                    </p>
                     <p>
                         I love Javascript and appreciate the flexibility it
                         offers. But what does this have to do with the
                         meticulous, intellectual crafted paragraph above about
                         human evolution? Like fire, Javascript if not properly
-                        handled can bring down the infamous 'production server'. 
+                        handled can bring down the infamous 'production server'.
                         That's where I come in.
-					</p>
+                    </p>
                 </SideOne>
 
                 <SideTwo className="paragraph-side-2">
                     <p>
                         I'm Jimmy. An {calculate_age()} year old astrophysics
-						student at the University of Nairobi. I am self-taught
-						in full stack web development and also a self-declared
-						Javascript language aficionado who is passionate about
-						how society interacts with technology and how we can
-						effectively use it to impact peoples lives positively. I
-						am currently open to a position where I can make a
-						difference using my skills.
-					</p>
+                        student at the University of Nairobi. I am self-taught
+                        in full stack web development and also a self-declared
+                        Javascript language aficionado who is passionate about
+                        how society interacts with technology and how we can
+                        effectively use it to impact peoples lives positively. I
+                        am currently open to a position where I can make a
+                        difference using my skills.
+                    </p>
                 </SideTwo>
             </ParagraphContainer>
         </Wrapper>
