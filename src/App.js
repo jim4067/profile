@@ -1,63 +1,42 @@
 import React, { useEffect, useState } from 'react';
-import { createGlobalStyle } from 'styled-components';
-import About from './components/About';
-import Footer from './components/Footer';
-import Landing from './components/Landing';
-import Navigation from './components/Navigation';
-import Projects from './components/Projects';
-import Skills from './components/Skills';
+import { darkTheme, lightTheme, GlobalStyles } from './styles/theme';
 import './styles/App.css';
-
-//the global styles for setting the theme
-const GlobalTheme = createGlobalStyle`
- body {
-     background-color: ${({ dark }) => dark ? "#242933" : "#eceff4"};
-     color: ${({ dark }) => dark ? "#eceff4" : "#4c566a"};
- }
-`;
+import Land from './components/Land';
 
 const App = () => {
-	const [dark, setDark] = useState(false);
+	const [theme, setTheme] = useState('light');
 
 	useEffect(() => {
-		const theme = window.localStorage.getItem('theme');
+		const theme = window.localStorage.getItem('theme'); //here lies the theme
 
-		if (theme === 'true') {
-			setDark(false);
+		if (theme === 'light') {
+			setTheme('dark')
 		}
 		else {
-			setDark(true);
+			setTheme('light')
 		}
 	}, []);
 
-	//make sure you useEffect on this so that the theme is not lost when the window is reloaded
-	//set the value of dark mode in local storage and useEffect tp set the dark variable
-	const handleThemeSwitch = () => {
-		//persisting the users theme
+	const switchTheme = () => {
 		window.localStorage.setItem(
-			'theme', dark
-		);
+			'theme', theme
+		)
 
-		setDark(!dark);
+		theme === "light" ? setTheme("dark") : setTheme("light");
 	}
 
 
 	return (
 		<div className='app-container'>
 
-			<GlobalTheme dark={dark} />
+			<GlobalStyles theme={theme === "light" ? lightTheme : darkTheme} />
+			<div>
+				<h1> Hello bro!</h1>
+				<h2> What is this light color heading</h2>
+				<button onClick={switchTheme}>click me</button>
+			</div>
 
-			<Navigation dark={dark} handleThemeSwitch={handleThemeSwitch} />
-
-			<Landing dark={dark} />
-
-			<About dark={dark} />
-
-			<Skills />
-
-			<Projects dark={dark}/>
-
-			<Footer dark={dark} />
+			<Land />
 
 		</div>
 	);
