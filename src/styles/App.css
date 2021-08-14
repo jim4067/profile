@@ -1,9 +1,8 @@
-.app-container {
-	margin-left: 7vw;
-	/* font-size: 5vw; */
+.content-container {
+	margin: 10vh 14vw;
 }
 
-/* animation for fading in */
+animation for fading in
 .fade-in-section {
 	opacity: 0;
 	transform: translateY(-20vh);
